@@ -240,7 +240,7 @@ export class MdePopoverTrigger implements AfterViewInit, OnDestroy { // tslint:d
     openPopover(): void {
         if (!this._popoverOpen && !this._halt) {
             this._createOverlay().attach(this._portal);
-    
+
             this._subscribeToBackdrop();
             this._subscribeToDetachments();
 
@@ -345,9 +345,9 @@ export class MdePopoverTrigger implements AfterViewInit, OnDestroy { // tslint:d
     private _setPopoverOpened(): void {
       if (!this._popoverOpen) {
         this._popoverOpen = true;
-        
+
         this.popoverOpened.next();
-        this.opened.emit()
+        this.opened.emit();
       }
     }
 
@@ -355,7 +355,7 @@ export class MdePopoverTrigger implements AfterViewInit, OnDestroy { // tslint:d
     private _setPopoverClosed(): void {
       if (this._popoverOpen) {
         this._popoverOpen = false;
-        
+
         this.popoverClosed.next();
         this.closed.emit();
       }
@@ -410,7 +410,7 @@ export class MdePopoverTrigger implements AfterViewInit, OnDestroy { // tslint:d
      * This method returns the scroll strategy used by the cdk/overlay.
      */
     private _getOverlayScrollStrategy(strategy: MdePopoverScrollStrategy): ScrollStrategy {
-      switch(strategy) {
+      switch (strategy) {
         case 'noop':
           console.log('noop');
           return this._overlay.scrollStrategies.noop();

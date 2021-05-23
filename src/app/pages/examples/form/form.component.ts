@@ -84,9 +84,7 @@ export class PageExamplesFormComponent implements OnInit {
       ref.openPopover();
       this.popoverSwitching = false;
     }
-    ref.closed.pipe(first()).subscribe(() => {
-      console.log('event', event);
-    });
+    ref.closed.pipe(first()).subscribe(() => {});
     this.popoverText = text;
     this.previousRef = ref;
     this.popoverOpen = true;
